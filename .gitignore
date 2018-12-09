@@ -1,0 +1,15 @@
+# package directories
+node_modules
+
+# Serverless directories
+.serverless
+.webpack
+
+# Environment variables
+env.yml
+
+# OSX Files
+.DS_Store
+
+# Coverage
+coverage/

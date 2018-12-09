@@ -1,0 +1,24 @@
+service: sls-movies
+
+frameworkVersion: '>=1.0.0 <2.0.0'
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: eu-central-1
+  environment: ${file(env.yml)}
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+package:
+  individually: true
+
+custom:
+  webpack:
+    webpackConfig: 'webpack.config.js'
+    includeModules: false
+    packager: 'yarn'
+
+functions: ${file(functions.yml)}
