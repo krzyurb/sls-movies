@@ -1,7 +1,7 @@
-helloWorld:
-  handler: src/hello.default
+movies:
+  handler: src/handler.lambda
   events:
     - http:
-        path: hello-world
-        method: get
+        path: movies
+        method: post
         cors: true

@@ -2,18 +2,11 @@
   <img src="https://github.com/serverless/assets/blob/master/Icon/Serverless_lockup_icon-red.png?raw=true" width="50">
 </p>
 
-# Serverless Boilerplate
+# Slack bot that suggests a random 80s action flick.
 
-## Using as a template
+Project inspirated by [#noServerNovember](https://serverless.com/blog/no-server-november-challenge/) challange. Slack bot that suggests a random 80s action flick.
+After using `/action` slash command - bot responds with random '80 action movie fetched from [themoviedb.org](http://www.themoviedb.org/).
 
-You can use that boilerplate when generating new
-Serverless project using serverless cli:
-
-```
-$ serverless create --template-url https://github.com/krzyurb/sls-boilerplate --name your-project-name
-$ cd your-project-name
-$ yarn
-```
 
 ## Installation
 
@@ -31,8 +24,3 @@ To start test suite simply run:
 ```
 $ yarn test
 ```
-
-## Serverless plugins
-
-* [serverless-webpack](https://github.com/serverless-heaven/serverless-webpack)
-* [serverless-offline](https://github.com/dherault/serverless-offline)
