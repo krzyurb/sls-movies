@@ -1,21 +1,19 @@
-/* eslint-disable class-methods-use-this */
-
 import axios from 'axios';
 
 const { API_KEY } = process.env;
 
 export default class MoviesService {
   async randomMovie() {
-    const firstPageData = await this.apiRequest();
-    const randomPageNumber = Math.round(Math.random() * (firstPageData.total_pages - 1) + 1);
+    const firstPageData = await this._apiRequest();
+    const randomPageNumber = this._randomPageNumber(firstPageData);
 
-    const data = await this.apiRequest(randomPageNumber);
+    const data = await this._apiRequest(randomPageNumber);
     const randomMovie = data.results[Math.floor(Math.random() * data.results.length)];
 
-    return this.prepareMessage(randomMovie);
+    return this._prepareMessage(randomMovie);
   }
 
-  prepareMessage(movie) {
+  _prepareMessage(movie) {
     return {
       attachments: [{
         pretext: "🎥 *Your '80 action movie for today!*",
@@ -43,7 +41,7 @@ export default class MoviesService {
     };
   }
 
-  async apiRequest(page = 1) {
+  async _apiRequest(page = 1) {
     const { data } = await axios.get('http://api.themoviedb.org/3/discover/movie', {
       params: {
         'primary_release_date.gte': '1980-01-01',
@@ -55,5 +53,9 @@ export default class MoviesService {
     });
 
     return data;
+  }
+
+  _randomPageNumber(firstPageData) {
+    return Math.round(Math.random() * (firstPageData.total_pages - 1) + 1);
   }
 }

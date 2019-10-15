@@ -1,10 +1,6 @@
-<p align="center">
-  <img src="https://github.com/serverless/assets/blob/master/Icon/Serverless_lockup_icon-red.png?raw=true" width="50">
-</p>
-
 # Slack bot that suggests a random 80s action flick.
 
-Project inspirated by [#noServerNovember](https://serverless.com/blog/no-server-november-challenge/) challange. Slack bot that suggests a random 80s action flick.
+Project inspired by [#noServerNovember](https://serverless.com/blog/no-server-november-challenge/) challenge. Slack bot that suggests a random 80s action flick.
 After using `/action` slash command - bot responds with random '80 action movie fetched from [themoviedb.org](http://www.themoviedb.org/).
 
 
